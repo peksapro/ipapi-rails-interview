@@ -22,4 +22,4 @@
 /config/master.key
 
 # Ignore RubyMine project settings directory
-./.idea
+.idea
