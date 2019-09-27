@@ -12,7 +12,7 @@
 default: &default
   adapter: mysql2
   encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
   username: root
   password:
   socket: /var/run/mysqld/mysqld.sock
@@ -20,6 +20,8 @@ default: &default
 development:
   <<: *default
   database: ipapi_development
+  username: <%= Rails.application.credentials.dig(:development, :mysql_username) %>
+  password: <%= Rails.application.credentials.dig(:development, :mysql_password) %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,6 +29,8 @@ development:
 test:
   <<: *default
   database: ipapi_test
+  username: <%= Rails.application.credentials.dig(:development, :mysql_username) %>
+  password: <%= Rails.application.credentials.dig(:development, :mysql_password) %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,5 +54,6 @@ test:
 production:
   <<: *default
   database: ipapi_production
-  username: ipapi
-  password: <%= ENV['IPAPI_DATABASE_PASSWORD'] %>
+  username: <%= Rails.application.credentials.dig(:production, :mysql_username) %>
+  password: <%= Rails.application.credentials.dig(:production, :mysql_password) %>
+
