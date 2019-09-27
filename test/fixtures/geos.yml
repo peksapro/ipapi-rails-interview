@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ip: 123.123.123.123
+  city: City
+  country: Country
+
+two:
+  ip: 124.124.124.124
+  city: BigCity
+  country: BigCountry
