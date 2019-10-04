@@ -10,6 +10,6 @@ class Api::V1::GeosControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     json_response = JSON.parse(self.response.body)
-    assert_equal @geo.ip, json_response['ip']
+    assert_equal @geo.ip.to_s, json_response['ip'].to_s
   end
 end
