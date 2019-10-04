@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  ip: 123.123.123.123
+  ip: 192.168.0.1
   city: City
   country: Country
 
 two:
-  ip: 124.124.124.124
+  ip: 192.168.10.1
   city: BigCity
   country: BigCountry
