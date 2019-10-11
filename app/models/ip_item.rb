@@ -1,6 +1,6 @@
 require 'resolv'
 
-class Geo < ApplicationRecord
+class IpItem < ApplicationRecord
   validates :ip, uniqueness: true
   validates :ip, :format => {
       :with => Regexp.union(Resolv::IPv4::Regex, Resolv::IPv6::Regex)
