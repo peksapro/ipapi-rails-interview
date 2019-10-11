@@ -1,4 +1,4 @@
-class ApiStackClient
+class ApiIpStackClient
   BASE_URL = 'http://api.ipstack.com/'
   API_KEY = Rails.application.credentials.dig(:ipstack, :api_key)
   def initialize(ip)
@@ -6,6 +6,6 @@ class ApiStackClient
   end
 
   def get
-    HTTParty.get(BASE_URL+@ip+'?access_key='+API_KEY).to_json
+    HTTParty.get("#{BASE_URL}#{@ip}?access_key=#{API_KEY}").to_json
   end
 end
